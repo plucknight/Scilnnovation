@@ -1,0 +1,90 @@
+
+/*复用*/
+body{
+    font:12px Arial,Helvetica,sans-serif;
+}
+.wrapper_01{
+    width: 1100px;
+    margin: 0 auto
+}
+.wrapper_02{
+    display: flex;
+    width: 1160px;
+    margin: 0 auto;
+}
+.wrapper_03{
+    width: 982px;
+    margin: 0 auto;
+}
+
+.topbar_sprite{
+    display: inline-block;
+    
+    background-repeat:no-repeat;
+    background-image: url(./imgs/search.png);
+}
+
+.topbar_icon_hot{
+    width: 28px;
+    height: 19px;
+}
+
+/*按钮*/
+.btn_sprite{
+    display: inline-block;
+    background-image: url(../imgs/button2.png);
+    height: 31px;
+    line-height: 31px;
+    font-size: 12px;
+    text-align: center;
+}
+
+.btn_type_01_sup{
+    background-position: right -100px;
+    padding-right: 5px;
+}
+.btn_type_01_sub{
+    background-position:  0 -59px;
+    padding-left: 3px;
+    display: block;
+}
+
+.btn_type_favor_sup{
+    background-position: right -1020px;
+    padding-right: 5px;
+}
+.btn_type_favor_sub{
+    display: inline-block;
+    background-position: 0 -977px;
+    padding-left: 28px;
+}
+
+/*icon*/
+
+.icon_sprite{
+    display: inline-block;
+    background-image: url(../imgs/iconall.png);
+}
+
+.icon_sprite_music{
+    background-position: 0px -24px;
+    width: 14px;
+    height: 11px;
+}
+
+.icon_sprite_play_01{
+    background-position: 0px 0px;
+    width: 16px;
+    height: 17px; 
+}
+
+.iconall_sprite{
+    display: inline-block;
+    background-image: url(../imgs/icon.png);
+}
+
+.iconall_sprite_radio{
+    background-position: -31px -658px;
+    width: 35px;
+    height: 15px;
+}

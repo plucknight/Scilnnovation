@@ -1,0 +1,67 @@
+.header_type_01{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    padding-bottom: 5px;
+    border-bottom: 1px solid #ccc;
+    font-size: 12px;
+}
+.header_type_01 .title{
+    color: #105c90;
+    font-style: 12px;
+}
+.header_type_01 .more{
+    color: #666;
+}
+.header_type_01 .more:hover{
+    text-decoration: underline;
+}
+
+.header_type_02{
+    position: relative;
+    display: flex;
+    justify-content: space-between;
+    /* 底部对齐 */
+    align-items: flex-end;
+    
+    height: 35px;
+    /*加boxsizing ：border就算在width和height之内
+    生效前提：有明确（非继承）的设置宽高
+    */
+    box-sizing: border-box;
+    padding-left: 34px;
+    padding-right: 20px;
+    padding-bottom: 5px;
+}
+
+
+.header_type_02 .area_left{
+    display: flex;
+    align-items: center;
+}
+.header_type_02 .title{
+    font-style: 20px;
+    font-weight: normal;
+    color: #333;
+}
+.header_type_02 .keywords{
+    display: flex;
+    margin-left: 20px;
+    font-size: 12px;
+    color: #fffffe;
+}
+.header_type_02 .keywords .item{
+    color: white;
+    font-size: 14px;
+}
+.header_type_02 .keywords .line{
+    margin: 0 3px;
+}
+.header_type_02 .more{
+    font-size: 12px;
+    color: #666;
+}
+.header_type_02 .more:hover{
+    text-decoration: underline;
+}

@@ -1,0 +1,131 @@
+.header {
+  height: 7vh;
+}
+.header > .top {
+  background-color: #105c90;
+  box-sizing: border-box;
+}
+
+.topbar {
+  display: flex;
+  justify-content: space-between;
+
+  line-height: 40px;
+}
+
+.topbar .bar-left {
+  display: flex;
+}
+
+.topbar .bar-left .logo {
+  height: 7vh;
+}
+
+.topbar .bar-left .logo a {
+  display: block; /*继承行高*/
+  color: white;
+  font-size: 22px;
+  width: 157px;
+  padding-right: 20px;
+}
+
+.topbar .bar-right .list {
+  /*行内非替换元素*/
+  display: flex;
+}
+
+.topbar .bar-right .list .item {
+  position: relative;
+  display: block;
+  padding: 0 20px;
+  font-size: 14px;
+  color: #ccc;
+}
+
+.topbar .bar-right .list .item:hover,
+.topbar .bar-right .list .item.active {
+  color: #fff;
+  background-color: #000;
+}
+
+.topbar .bar-right .list .item.active::after {
+  content: "";
+  position: absolute;
+  width: 12px;
+  height: 7px;
+
+  left: 0;
+  right: 0;
+  margin: 0 auto;
+
+  background-image: url(../imgs/triangle.png);
+}
+
+.topbar .bar-right .list .item .icon-hot {
+  position: absolute;
+  top: 10px;
+  right: -10px;
+}
+
+.titleA {
+  margin-top: 10px;
+}
+/*右侧*/
+.topbar .bar-right {
+  display: flex;
+  align-items: center;
+  padding-right: 20px;
+}
+.topbar .bar-right .login {
+  margin-left: 10px;
+}
+.topbar .bar-right .login:hover a {
+  color: #ccc;
+}
+.topbar .bar-right .login a {
+  color: #787878;
+}
+.topbar .bar-right .login a:hover {
+  color: #787878;
+  text-decoration: underline;
+}
+.topbar .bar-right .anthor a {
+  display: inline-block;
+  width: 90px;
+  height: 32px;
+  margin: 0 20px;
+  font-size: 14px;
+  line-height: 32px;
+  color: #ccc;
+  text-align: center;
+  box-sizing: border-box;
+  border: 1px solid #4f4f4f;
+  border-radius: 20px;
+}
+
+.topbar .bar-right .anthor a:hover {
+  color: #fff;
+  border-color: #fff;
+}
+
+.topbar .bar-right .search {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  width: 158px;
+  height: 32px;
+  box-sizing: border-box;
+
+  padding-right: 8px;
+  border-radius: 30px;
+  background-size: 16px 16px;
+  background-repeat: no-repeat;
+  background-image: url(../imgs/search.png);
+  background-color: #fff;
+  background-position: 7px 8px;
+}
+
+.topbar .bar-right .search input {
+  font-size: 12px;
+  width: 120px;
+}

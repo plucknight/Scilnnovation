@@ -1,0 +1,39 @@
+.bottom {
+  width: 100%;
+  height: 10vh;
+  display: flex;
+  background-color: #043a54;
+}
+
+.bottom .wrapper {
+  margin: auto auto;
+}
+.copyright {
+  margin: auto auto;
+  padding-top: 24px;
+  text-align: center;
+  color: #999;
+  font-size: 15px;
+}
+
+.copyright p {
+  line-height: 1;
+  margin-bottom: 20px;
+}
+
+.copyright a {
+  color: #999;
+  line-height: 1;
+  padding: 0 10px 0 6px;
+  border-right: 1px solid #999;
+}
+
+.copyright a:last-child {
+  border-right: none;
+}
+.jojielun {
+  display: flex;
+  justify-content: center;
+
+  border-top: 1px solid #e4e4e4;
+}

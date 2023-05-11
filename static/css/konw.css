@@ -1,0 +1,223 @@
+table {
+  width: 100%;
+
+  border-collapse: collapse;
+  margin-top: 20px;
+}
+
+th,
+td {
+  padding: 10px;
+  font-size: 20px;
+  text-align: center;
+  border: 1px solid #ddd;
+}
+
+th {
+  box-shadow: 0 2px 4px rgba(33, 59, 112, 0.2);
+  color: #333;
+  font-size: 20px;
+  font-weight: bold;
+}
+h1 {
+  text-align: center;
+  color: #333;
+  margin-bottom: 20px;
+}
+.container {
+  height: 100%;
+  width: 100%;
+  max-width: 600px;
+  margin: 0 auto;
+  font-size: 20px;
+}
+
+.list-item {
+  width: 1200px;
+  flex-wrap: wrap;
+  display: flex;
+  margin-bottom: 30px;
+  border-radius: 8px;
+  background-color: #fff;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  overflow: hidden;
+}
+
+.level {
+  flex: 0 0 100px;
+  background-color: orange;
+  color: #fff;
+  text-align: center;
+  padding: 3px 0;
+  margin: 0px 10px;
+  font-weight: bold;
+  font-size: 18px;
+}
+
+.level-text {
+  font-size: 14px;
+  color: #999;
+}
+
+.details {
+  flex: 1;
+  padding: 20px;
+}
+
+.title {
+  font-weight: bold;
+  margin-bottom: 10px;
+  color: orange;
+  font-size: 20px;
+}
+
+.description {
+  color: #555;
+  line-height: 1.5;
+}
+.demo-tabs > .el-tabs__content {
+  padding: 32px;
+  color: #555555;
+  font-size: 32px;
+  font-weight: 600;
+}
+.textbox {
+  background-color: #1e1e1e;
+  border: 2px solid #ff9800;
+  color: #ff9800;
+  padding: 20px;
+  border-radius: 10px;
+  font-family: Arial, sans-serif;
+  font-size: 16px;
+  line-height: 1.5;
+}
+
+.section {
+  margin-bottom: 20px;
+}
+
+.section-title {
+  font-size: 18px;
+  font-weight: bold;
+  margin-bottom: 5px;
+}
+
+.section-content {
+  margin-left: 20px;
+}
+
+.sub-section {
+  margin-bottom: 10px;
+}
+
+.sub-section-title {
+  font-weight: bold;
+}
+
+.section {
+  margin-bottom: 20px;
+}
+
+.section-title {
+  font-size: 18px;
+  font-weight: bold;
+  margin-bottom: 5px;
+}
+
+.section-content {
+  margin-left: 20px;
+}
+
+.list-container {
+  width: 1050px;
+  background-color: #f5f5f5;
+  border: 1px solid #dddddd;
+  border-radius: 5px;
+  padding: 10px;
+}
+
+h2 {
+  font-size: 20px;
+  margin-bottom: 5px;
+}
+
+ul {
+  list-style-type: none;
+  padding-left: 0;
+}
+
+li {
+  margin-bottom: 10px;
+}
+
+.description {
+  margin-left: 20px;
+}
+.textbox2 {
+  background-color: #f1f1f1;
+  border-radius: 10px;
+  font-size: 16px;
+  padding: 20px;
+  margin: 20px;
+  font-family: Arial, sans-serif;
+  color: #333;
+  line-height: 1.5;
+}
+
+h1 {
+  text-align: center;
+  color: #555;
+}
+
+p {
+  margin-bottom: 10px;
+}
+
+.food-list {
+  list-style-type: none;
+  padding: 0;
+}
+
+.food-item {
+  margin-bottom: 10px;
+  background-color: #f1f1f1;
+  border-radius: 5px;
+  padding: 5px;
+  font-family: Arial, sans-serif;
+  color: #333;
+}
+
+.food-title {
+  color: #555;
+  margin-top: 0;
+}
+
+.food-description {
+  font-size: 16px;
+  margin: 2px 0;
+}
+
+.harm-list {
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
+}
+
+.harm-item {
+  margin-bottom: 10px;
+  padding: 10px;
+  background-color: #fff;
+  border-radius: 5px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.harm-title {
+  font-weight: bold;
+  color: #333;
+  margin-bottom: 5px;
+}
+
+.harm-description {
+  font-size: 16px;
+  color: #666;
+}

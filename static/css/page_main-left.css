@@ -1,0 +1,197 @@
+.main .area-left{
+    width: 690px;
+    padding:20px 20px 40px;
+    background-image: linear-gradient(#809ffa,#d4d1e1 );
+} 
+
+.disc-section{
+    display: flex;
+}
+.disc-section-left{
+    width: 80%;
+}
+
+.disc-section .content{
+    height: 300px;
+    margin: 20px 0;
+    box-sizing: border-box;
+}
+
+.disc-section .content .inner{
+    position: relative;
+    height: 100%;
+    box-sizing: border-box;
+    
+	box-shadow: -3px 5px 10px #6076cf;
+}
+
+
+
+.disc-section .inner .roller{
+    height: 55%;
+    padding: 0 25px;
+    overflow: hidden;
+    background-color: #97c6f2;
+}
+
+.disc-section .inner .yujing{
+    display: flex;
+    margin-top: 14px;
+}
+.disc-section .inner
+.chengdu{
+    width: 140px;
+    height: 90px;
+    font-size: 80px;
+    color: white;
+    background: red;
+    margin-right: 20px;
+}
+
+.disc-section .inner .desc{
+    width: 200px;
+}
+.disc-section .inner .desc .rank{
+    font-size: 40px;
+    color: red;
+}
+.disc-section .inner .yujing .pic{
+    width: 100px;
+    height: 100px;
+}
+.disc-section .inner .advise{
+    height: 45%;
+    overflow: hidden;
+    background: white;
+}
+
+.disc-section .inner .desc_AQI  .pp{
+    font-size: 12px;
+    color: black;
+    font-weight: 500;
+    display: inline-block;
+    padding: 6px 0px;
+    padding-top: 5px;
+}
+
+.disc-section .inner  .tib{
+    font-size: 16px;
+    font-weight: 700;
+    color: #49678a;
+    display: inline-block;
+    padding: 5px 3px;
+    padding-left: 23px;
+}
+
+.disc-section .inner .pp{
+    font-size: 12px;
+    color: black;
+    font-weight: 600;
+    display: inline-block;
+    padding: 6px 24px;
+    padding-top: 5px;
+}
+
+
+.disc-section .disc-section-right{
+    width: 20%;
+    background-color: #c6d0f5;
+    height: 300px;
+    margin: 20px 0px;
+    
+}
+.disc-section .disc-section-right .pp{
+    display: block;
+    width: 100%;
+    height: 30px;
+    font-size: 13px;
+    font-weight: 600;
+    padding-left: 4px;
+}
+.disc-section .disc-section-right .datepic{
+    /*background: url(../imgs/Snipaste_2023-03-29_22-47-41.png) no-repeat;*/
+    width: 136px;
+    height: 177px;
+    background-size:100% 100%;
+}
+.disc-section .disc-section-right .jk{
+    display: block;
+    width: 100%;
+    height: 24px;
+    font-size: 15px;
+    font-weight: 600;
+    padding-left: 36px;
+    margin-top: 7px;
+}
+.disc-section .disc-section-right .zt{
+    display: block;
+    width: 100%;
+    height: 40px;
+    font-size: 40px;
+    font-weight: 600;
+    padding-left: 48px;
+    color: red;
+}
+
+.area-right .gq{
+    display: flex;
+    margin-bottom: 3px;
+}
+
+.area-right .gq .item{
+    display: block;
+    background: #c7cff4;
+    height: 30px;
+    width: 80px;
+    margin-right: 3px;
+    font-weight: 500;
+    font-size: 14px;
+    line-height: 30px;
+    text-align: center;
+    border-radius: 5px;
+}
+.area-right .gq .item:nth-child(1){
+    background: #97c6f2;
+}
+.tips{
+    margin-top: 50px;
+    height: 200px;
+    background:linear-gradient(#b2bdec,#cacce4 );
+}
+.tips .title{
+    color:#49678a;
+    font-size: 20px;
+    padding: 5px 5px;
+    margin-bottom: 10px;
+}
+.tips .tib{
+    display: flex;
+    justify-content: space-around;
+
+}
+.tips .wt{
+    border-bottom:2px solid #ccc;
+}
+.tips  .item{
+    background: #fff;
+    width: 95px;
+    height: 120px;
+}
+.tips .item .dir{
+    font-size: 14px;
+    display: block;
+    padding: 2px;
+}
+.tips .item .date{
+    font-size: 18px;
+    font-weight: 700;
+    color: orange;
+    display: block;
+    padding: 2px;
+    text-align: center;
+}
+.tips .item .data{
+    display: block;
+    padding: 2px;
+    text-align: center;
+}
