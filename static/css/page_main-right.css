@@ -1,26 +1,24 @@
 /*右侧区域*/
-.main .area-right{
-    width: 300px;
-    height: 694px;
-    margin-left: 40px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    background-image: linear-gradient(#809ffa,#d6d2e2 );
+.main .area-right {
+  width: 300px;
+  height: 694px;
+  margin-left: 40px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-image: linear-gradient(#809ffa, #d6d2e2);
 }
 
-.area-right .weekAPI{
-    /*background: url(../imgs/Snipaste_2023-03-29_21-57-22.png) no-repeat;*/
-    width: 450px;
-    height: 300px;
-    background-size:100% 100%;
+.area-right .weekAPI {
+  /*background: url(../imgs/Snipaste_2023-03-29_21-57-22.png) no-repeat;*/
+  width: 450px;
+  height: 300px;
+  background-size: 100% 100%;
 }
-.area-right .future_haze_forecast{
-    
-    background: url(../imgs/3DSWGX7E5$N$7_R6LLSZXK0.png) no-repeat;
-    width: 500px;
-    height: 250px;
-    background-size:100% 100%;
+.area-right .future_haze_forecast {
+  width: 500px;
+  height: 250px;
+  background-size: 100% 100%;
 
-    margin-bottom: 20px;
+  margin-bottom: 20px;
 }

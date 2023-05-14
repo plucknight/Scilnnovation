@@ -4,7 +4,7 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Document</title>
+    <title>咸阳空气质量</title>
 
     <link rel="stylesheet" href="../static/css/common.css" />
     <link rel="stylesheet" href="../static/css/header.css" />
@@ -17,7 +17,7 @@
     <link rel="stylesheet" href="../static/css/konw.css" />
     <link rel="stylesheet" href="../static/element-ui/index.css" />
   </head>
-  <script src="./vue.js"></script>
+  <script src="../js/vue.js"></script>
   <script src="../static/element-ui/index.js"></script>
   <body style="height: 100%">
     <div id="app">
@@ -45,182 +45,193 @@
                     :size="size"
                   />
                 </div>
-              </div>
-              <div class="login">
-                <a href="#">登录</a>
+                <!-- <div class="login">
+                    <a href="#">登录</a>
+                </div> -->
               </div>
             </div>
           </div>
         </div>
-      </div>
-      <div class="main">
-        <div class="area wrapper_02">
-          <div class="area-left">
-            <div class="recommendd-section">
-              <div class="header_type_02">
-                <ul class="keywords">
-                  <li><a class="item" href="#">更新时间:{{realtime}}</a></li>
-                  <li class="line"></li>
-                  <!-- <li><a class="item" href="#">天气:晴</a></li> -->
-                  <li class="line"></li>
-                  <li><a class="item" href="#">{{wind_dir}}</a></li>
-                  <li class="line"></li>
-                  <li><a class="item" href="#">湿度{{humidity}}</a></li>
-                  <li class="line"></li>
-                  <li><a class="item" href="#">风速{{windspeed}}</a></li>
-                </ul>
+        <div class="main">
+          <div class="area wrapper_02">
+            <div class="area-left">
+              <div class="recommendd-section">
+                <div class="header_type_02">
+                  <ul class="keywords">
+                    <li><a class="item" href="#">更新时间:{{realtime}}</a></li>
+                    <li class="line"></li>
+                    <!-- <li><a class="item" href="#">天气:晴</a></li> -->
+                    <li class="line"></li>
+                    <li><a class="item" href="#">{{wind_dir}}</a></li>
+                    <li class="line"></li>
+                    <li><a class="item" href="#">湿度{{humidity}}</a></li>
+                    <li class="line"></li>
+                    <li><a class="item" href="#">风速{{windspeed}}</a></li>
+                  </ul>
+                </div>
               </div>
-            </div>
-            <div class="disc-section">
-              <div class="disc-section-left">
-                <div class="content">
-                  <div class="inner">
-                    <div class="roller">
-                      <div class="desc_AQI">
+              <div class="disc-section">
+                <div class="disc-section-left">
+                  <div class="content">
+                    <div class="inner">
+                      <div class="roller">
+                        <div class="desc_AQI">
+                          <p class="pp">
+                            <span class="tib"> 杨凌区API:</span
+                            >杨凌区实时空气质量指数(API)
+                          </p>
+                        </div>
+                        <div class="yujing">
+                          <div class="chengdu">
+                            <p>{{ aqi }}</p>
+                          </div>
+                          <div class="desc">
+                            <p class="rank">{{ rank }}级污染</p>
+                            <p>更新时间:{{realtime}}</p>
+                            <!-- <p>温度：11℃</p> -->
+                          </div>
+                          <div class="pic">
+                            <img
+                              src="../static/imgs/Snipaste_2023-03-27_23-08-25.png"
+                              width="100px"
+                              height="100px"
+                            />
+                          </div>
+                        </div>
+                      </div>
+                      <div class="advise">
                         <p class="pp">
-                          <span class="tib"> 杨凌区API:</span
-                          >杨凌区实时空气质量指数(API)
+                          <span class="tib"> 对健康的影响：</span
+                          >空气重度污染对人危害有很多，可能会导致呼吸系统炎症患病率的增加，也可能会导致人体的健康受到影响，除此之外还可能会引发炎症和咳嗽咳痰症状的出现。
+                        </p>
+                        <p class="pp">
+                          <span class="tib">建议措施：</span
+                          >儿童、老年人及心脏病、呼吸系统疾病患者应避免长时间、高强度的户外锻炼。
                         </p>
                       </div>
-                      <div class="yujing">
-                        <div class="chengdu">
-                          <p>{{ aqi }}</p>
-                        </div>
-                        <div class="desc">
-                          <p class="rank">{{ rank }}级污染</p>
-                          <p>更新时间:星期日22：00</p>
-                          <p>温度：11℃</p>
-                        </div>
-                        <div class="pic">
-                          <img
-                            src="../static/imgs/Snipaste_2023-03-27_23-08-25.png"
-                            width="100px"
-                            height="100px"
-                          />
-                        </div>
-                      </div>
-                    </div>
-                    <div class="advise">
-                      <p class="pp">
-                        <span class="tib"> 对健康的影响：</span
-                        >空气重度污染对人危害有很多，可能会导致呼吸系统炎症患病率的增加，也可能会导致人体的健康受到影响，除此之外还可能会引发炎症和咳嗽咳痰症状的出现。
-                      </p>
-                      <p class="pp">
-                        <span class="tib">建议措施：</span
-                        >儿童、老年人及心脏病、呼吸系统疾病患者应避免长时间、高强度的户外锻炼。
-                      </p>
                     </div>
                   </div>
                 </div>
+                <div class="disc-section-right">
+                  <p class="pp">污染物空气质量分指数</p>
+                  <div class="datepic" id="dateaqi"></div>
+                  <p class="jk">健康指引:</p>
+                  <p class="zt">{{ guide }}</p>
+                </div>
               </div>
-              <div class="disc-section-right">
-                <p class="pp">污染物空气质量分指数</p>
-                <div class="datepic" id="dateaqi"></div>
-                <p class="jk">健康指引:</p>
-                <p class="zt">{{ guide }}</p>
-              </div>
-            </div>
 
-            <div class="tips">
-              <div class="title">未来七天空气质量预报</div>
-              <ul class="tib">
-                <li class="item">
-                  <div><h3 class="data">星期五</h3></div>
-                  <div class="wt"></div>
-                  <p class="dir">首要污染物：</p>
-                  <p class="date">PM2.5</p>
-                  <p class="dir">污染级别：</p>
-                  <p class="date">2级</p>
-                </li>
-                <li class="item">
-                  <div><h3 class="data">星期六</h3></div>
-                  <div class="wt"></div>
-                  <p class="dir">首要污染物：</p>
-                  <p class="date">PM2.5</p>
-                  <p class="dir">污染级别：</p>
-                  <p class="date">2级</p>
-                </li>
-                <li class="item">
-                  <div><h3 class="data">星期天</h3></div>
-                  <div class="wt"></div>
-                  <p class="dir">首要污染物：</p>
-                  <p class="date">PM2.5</p>
-                  <p class="dir">污染级别：</p>
-                  <p class="date">2级</p>
-                </li>
-                <li class="item">
-                  <div><h3 class="data">星期一</h3></div>
-                  <div class="wt"></div>
-                  <p class="dir">首要污染物：</p>
-                  <p class="date">PM2.5</p>
-                  <p class="dir">污染级别：</p>
-                  <p class="date">2级</p>
-                </li>
-                <li class="item">
-                  <div><h3 class="data">星期二</h3></div>
-                  <div class="wt"></div>
-                  <p class="dir">首要污染物：</p>
-                  <p class="date">PM2.5</p>
-                  <p class="dir">污染级别：</p>
-                  <p class="date">2级</p>
-                </li>
-                <li class="item">
-                  <div><h3 class="data">星期三</h3></div>
-                  <div class="wt"></div>
-                  <p class="dir">首要污染物：</p>
-                  <p class="date">PM2.5</p>
-                  <p class="dir">污染级别：</p>
-                  <p class="date">2级</p>
-                </li>
-                <li class="item">
-                  <div><h3 class="data">星期四</h3></div>
-                  <div class="wt"></div>
-                  <p class="dir">首要污染物：</p>
-                  <p class="date">PM2.5</p>
-                  <p class="dir">污染级别：</p>
-                  <p class="date">2级</p>
-                </li>
-              </ul>
-            </div>
-          </div>
-          <div class="area-right">
-            <div class="position">
-              <ul class="gq">
-                <li class="item">过去24小时</li>
-                <li class="item">未来24小时</li>
-                <li class="item">未来一周</li>
-                <li class="item">过去30天</li>
-              </ul>
-              <div class="future_haze_forecast">
-                <strong>空气污染物含量折线图</strong>
+              <div class="tips">
+                <div class="title">未来七天空气质量预报</div>
+                <ul class="tib">
+                  <li class="item">
+                    <div><h3 class="data">星期五</h3></div>
+                    <div class="wt"></div>
+                    <p class="dir">首要污染物：</p>
+                    <p class="date">PM2.5</p>
+                    <p class="dir">污染级别：</p>
+                    <p class="date">2级</p>
+                  </li>
+                  <li class="item">
+                    <div><h3 class="data">星期六</h3></div>
+                    <div class="wt"></div>
+                    <p class="dir">首要污染物：</p>
+                    <p class="date">PM2.5</p>
+                    <p class="dir">污染级别：</p>
+                    <p class="date">2级</p>
+                  </li>
+                  <li class="item">
+                    <div><h3 class="data">星期天</h3></div>
+                    <div class="wt"></div>
+                    <p class="dir">首要污染物：</p>
+                    <p class="date">PM2.5</p>
+                    <p class="dir">污染级别：</p>
+                    <p class="date">2级</p>
+                  </li>
+                  <li class="item">
+                    <div><h3 class="data">星期一</h3></div>
+                    <div class="wt"></div>
+                    <p class="dir">首要污染物：</p>
+                    <p class="date">PM2.5</p>
+                    <p class="dir">污染级别：</p>
+                    <p class="date">2级</p>
+                  </li>
+                  <li class="item">
+                    <div><h3 class="data">星期二</h3></div>
+                    <div class="wt"></div>
+                    <p class="dir">首要污染物：</p>
+                    <p class="date">PM2.5</p>
+                    <p class="dir">污染级别：</p>
+                    <p class="date">2级</p>
+                  </li>
+                  <li class="item">
+                    <div><h3 class="data">星期三</h3></div>
+                    <div class="wt"></div>
+                    <p class="dir">首要污染物：</p>
+                    <p class="date">PM2.5</p>
+                    <p class="dir">污染级别：</p>
+                    <p class="date">2级</p>
+                  </li>
+                  <li class="item">
+                    <div><h3 class="data">星期四</h3></div>
+                    <div class="wt"></div>
+                    <p class="dir">首要污染物：</p>
+                    <p class="date">PM2.5</p>
+                    <p class="dir">污染级别：</p>
+                    <p class="date">2级</p>
+                  </li>
+                </ul>
               </div>
-              <div class="weekAPI" id="wkAPI"></div>
+            </div>
+            <div class="area-right">
+              <div class="position">
+                <ul class="gq">
+                  <li class="item">
+                    <button id="past24" onclick="show_hour()">
+                      过去24小时
+                    </button>
+                  </li>
+                  <!-- <li class="item">未来24小时</li> -->
+                  <li class="item"><button id="preweek">未来一周</button></li>
+                  <!-- <li class="item">过去30天</li> -->
+                </ul>
+                <div class="future_haze_forecast" id="forecast">
+                  <strong>空气污染物含量折线图</strong>
+                </div>
+                <div class="weekAPI" id="wkAPI"></div>
+              </div>
             </div>
           </div>
         </div>
-      </div>
-      <div class="bottom">
-        <div class="wrapper">
-          <div class="copyright">
-            <p>
-              <a href="">Copyright2023咸阳市生态环境监测中心</a>
-              <a href="">陕ICP备2021013062号</a>
-            </p>
-            <p>
-              <a href="#"> 咸阳公安备213445714号</a>
-              您是本站的第1位访问者
-            </p>
+        <div class="bottom">
+          <div class="wrapper">
+            <div class="copyright">
+              <p>
+                <a href="">Copyright2023咸阳市生态环境监测中心</a>
+                <a href="">陕ICP备2021013062号</a>
+              </p>
+              <p>
+                <a href="#"> 咸阳公安备213445714号</a>
+                您是本站的第1位访问者
+              </p>
+            </div>
           </div>
         </div>
+        <div id="receive" d="{{ real }}" style="display: none"></div>
+        <div id="week7" d="{{ aqi7 }}" style="display: none"></div>
+        <div id="past" d="{{ past24 }}" style="display: none"></div>
       </div>
-      <div id="receive" d="{{ real }}" style="display: none"></div>
     </div>
     <script>
       var realtime = document.getElementById("receive").getAttribute("d"); //绑定以获取json值
       var realtime_data = JSON.parse(realtime);
-      console.log(realtime_data);
+      var week = document.getElementById("week7").getAttribute("d"); //绑定以获取json值
+      var weekaqi_data = JSON.parse(week);
+      var hour = document.getElementById("past").getAttribute("d"); //绑定以获取json值
+      var hour_data = JSON.parse(hour);
+      console.log(hour_data);
     </script>
-    <script src="https://cdn.staticfile.org/echarts/4.3.0/echarts.min.js"></script>
+    <script src="../js/echarts.min.js"></script>
+    <!-- 污染物含量  -->
     <script type="text/javascript">
       arr = new Array();
       arr[0] = realtime_data.so2;
@@ -229,7 +240,6 @@
       arr[3] = realtime_data.o3;
       arr[4] = realtime_data.pm2;
       arr[5] = realtime_data.pm10;
-      console.log(arr);
       // 基于准备好的dom，初始化echarts实例
       var myChart = echarts.init(document.getElementById("dateaqi"));
 
@@ -294,19 +304,179 @@
           },
         ],
       };
-
       // 使用刚指定的配置项和数据显示图表。
       myChart.setOption(option);
     </script>
     <script>
-      new Vue({
-        el: "#app",
-        data() {
-          return {};
+      var chartDom = document.getElementById("wkAPI");
+      var myChart2 = echarts.init(chartDom);
+      var option2;
+      const dataX = [];
+      const dataY = [];
+      for (i = 0; i < 7; i++) {
+        dataY.push(weekaqi_data[i].aqi);
+      }
+      for (i = 0; i < 7; i++) {
+        dataX.push(weekaqi_data[i].date);
+      }
+      option2 = {
+        title: { text: "一周AQI变化" },
+        xAxis: {
+          type: "category",
+          data: dataX,
         },
-        mounted() {},
-        methods: {},
-      });
+        yAxis: {
+          type: "value",
+        },
+        series: [
+          {
+            data: dataY,
+            type: "bar",
+            showBackground: true,
+            backgroundStyle: {
+              color: "rgba(180, 180, 180, 0.2)",
+            },
+          },
+        ],
+        tooltip: {
+          trigger: "axis",
+          axisPointer: { type: "cross" },
+        },
+        color: ["#8b9dee"],
+        legend: {
+          orient: "horizontal",
+          right: "center",
+          top: "center",
+          data: dataX,
+          textstyle: { color: "#e7d6be" },
+        },
+        xAxis: [
+          {
+            type: "category",
+            formatter: "{value}",
+            axisTick: {
+              alignWithLabel: true,
+            },
+            data: dataX,
+          },
+        ],
+        yAxis: [
+          {
+            name: "AQI",
+            type: "value",
+            position: "right",
+            axisLabel: {
+              formatter: "{value}",
+            },
+          },
+        ],
+      };
+
+      option2 && myChart2.setOption(option2);
+    </script>
+    <!-- 过去二十四小时 -->
+    <script>
+      function show_hour() {
+        var chartDom = document.getElementById("forecast");
+        var myChart3 = echarts.init(chartDom);
+        var option3;
+        const data1 = [];
+        const data2 = [];
+        const data3 = [];
+        const data4 = [];
+        const data5 = [];
+        const data6 = [];
+        const data7 = [];
+        for (i = 0; i < 24; i++) {
+          data7.push(hour_data[i].date);
+        }
+        for (i = 0; i < 24; i++) {
+          data1.push(hour_data[i].so2);
+          data2.push(hour_data[i].o3);
+          data3.push(hour_data[i].no2);
+          data4.push(hour_data[i].co);
+          data5.push(hour_data[i].pm2);
+          data6.push(hour_data[i].pm10);
+        }
+        console.log(data1);
+        option3 = {
+          tooltip: {
+            trigger: "axis",
+          },
+          legend: {
+            data: ["SO2", "O3", "NO2", "CO", "PM2.5", "PM10"],
+          },
+          grid: {
+            left: "3%",
+            right: "4%",
+            bottom: "3%",
+            containLabel: true,
+          },
+          toolbox: {
+            feature: {
+              saveAsImage: {},
+            },
+          },
+          xAxis: {
+            type: "category",
+            boundaryGap: false,
+            data: data7,
+          },
+          yAxis: {
+            type: "value",
+          },
+          series: [
+            {
+              name: "SO2",
+              type: "line",
+              stack: "Total",
+              data: data1,
+            },
+            {
+              name: "O3",
+              type: "line",
+              stack: "Total",
+              data: data2,
+            },
+            {
+              name: "NO2",
+              type: "line",
+              stack: "Total",
+              data: data3,
+            },
+            {
+              name: "CO",
+              type: "line",
+              stack: "Total",
+              data: data4,
+            },
+            {
+              name: "PM2.5",
+              type: "line",
+              stack: "Total",
+              data: data5,
+            },
+            {
+              name: "PM10",
+              type: "line",
+              stack: "Total",
+              data: data6,
+            },
+          ],
+        };
+        option3 && myChart3.setOption(option3);
+      }
+      show_hour();
     </script>
   </body>
+  <script>
+    new Vue({
+      el: "#app",
+      data() {
+        return {};
+      },
+      mounted() {},
+      methods: {},
+    });
+  </script>
 </html>

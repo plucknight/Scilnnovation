@@ -8,6 +8,17 @@ import pandas as pd
 import json
 from flask import Flask, render_template, request, jsonify
 import pymysql
+from datetime import date, datetime
+
+class ComplexEncoder(json.JSONEncoder):
+    def default(self, obj):
+        if isinstance(obj, datetime):
+            return obj.strftime('%Y-%m-%d %H:%M:%S')
+        elif isinstance(obj, date):
+            return obj.strftime('%Y-%m-%d')
+        else:
+            return json.JSONEncoder.default(self, obj)
+
 
 def sort(pre):
     df=pd.read_csv("train.csv")
@@ -28,7 +39,7 @@ app = Flask(__name__)
 @app.route("/")
 #定义方法 用jinjia2引擎来渲染页面，并返回一个index.html页面
 def root():
-    db = pymysql.connect(host='localhost', user='de', password='123', database='test')
+    db = pymysql.connect(host='localhost', user='root', password='0000', database='fogdata')
     cursor = db.cursor()
     cursor.execute("select * from realtime")
     fields=cursor.description           #获取字段名
@@ -48,6 +59,7 @@ def root():
     adv="良好"
     if pre[0]==0:
         rate=1
+        adv="良好"
     if pre[0]==2:
         rate=2
         adv="一般"
@@ -57,9 +69,42 @@ def root():
     if pre[0]==3:
         rate=4
         adv="严重"
+    #查询weekaqi
+    cursor.execute("select * from weekaqi")
+    result=cursor.fetchall()
+    fields=cursor.description           #获取字段名
+    col_list2=[]
+    temp={}
+    week={}                     #一周aqi数据
+    for i in fields:
+       col_list2.append(i[0])
+    for x in range(0,7):
+        for y in range(0,2):
+           temp[col_list2[y]] = result[x][y]
+        week[x]=temp
+        temp={}
+    week_json= json.dumps(week, ensure_ascii=False)
+    #查询24past数据
+    cursor.execute("select * from 24hours")
+    result=cursor.fetchall()
+    fields=cursor.description           #获取字段名
+    col_list3=[]
+    temp={}
+    data24={}                     #一周aqi数据
+    for i in fields:
+       col_list3.append(i[0])
+    print(result[0],result[1])
+    for x in range(0,len(result)):
+        for y in range(0,7):
+           temp[col_list3[y]] = result[x][y]
+        data24[x]=temp
+        temp={}
+    day_json= json.dumps(data24, cls=ComplexEncoder)
+    print(day_json)
+    cursor.close()
     return render_template("index.html",realtime=res[0],
-    wind_dir=res[11],humidity=res[10],windspeed=res[12],aqi=res[1],real=realtime_json,
-    rank=rate,guide=adv)
+    wind_dir=res[11],humidity=res[10],windspeed=res[12],aqi=('%.0f'%res[1]),real=realtime_json,
+    rank=rate,guide=adv,aqi7=week_json,past24=day_json)
 
 #定义app在5000端口运行
 if __name__ == '__main__':
