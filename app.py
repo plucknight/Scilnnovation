@@ -36,7 +36,7 @@ def sort(pre):
 app = Flask(__name__)
 
 #通过python装饰器的方法定义路由地址
-@app.route("/")
+@app.route("/index.html")
 #定义方法 用jinjia2引擎来渲染页面，并返回一个index.html页面
 def root():
     db = pymysql.connect(host='localhost', user='root', password='0000', database='fogdata')
@@ -52,9 +52,7 @@ def root():
     for i in range(1,len(col_list)):
         realtime[col_list[i]] = res[i]
     realtime_json= json.dumps(realtime, ensure_ascii=False)
-    print(realtime_json)
     pre =sort(res[8])
-    print(pre)
     rate=1
     adv="良好"
     if pre[0]==0:
@@ -100,11 +98,31 @@ def root():
         data24[x]=temp
         temp={}
     day_json= json.dumps(data24, cls=ComplexEncoder)
-    print(day_json)
+    #查询preweek数据
+    cursor.execute("select * from pre_week")
+    preres=cursor.fetchall()
+    fields=cursor.description           #获取字段名
+    col_list4=[]
+    temp={}
+    datapre={}                     #一周aqi数据
+    for i in fields:
+       col_list4.append(i[0])
+    for x in range(0,len(preres)):
+        for y in range(0,len(col_list4)):
+           temp[col_list4[y]] = preres[x][y]
+        datapre[x]=temp
+        temp={}
+    preweek_json= json.dumps(datapre, cls=ComplexEncoder)
     cursor.close()
     return render_template("index.html",realtime=res[0],
     wind_dir=res[11],humidity=res[10],windspeed=res[12],aqi=('%.0f'%res[1]),real=realtime_json,
-    rank=rate,guide=adv,aqi7=week_json,past24=day_json)
+    rank=rate,guide=adv,aqi7=week_json,past24=day_json,nextweek=preweek_json)
+
+@app.route("/relateKnowlege.html")
+def know():
+    return render_template("relateKnowlege.html")
+
+
 
 #定义app在5000端口运行
 if __name__ == '__main__':
